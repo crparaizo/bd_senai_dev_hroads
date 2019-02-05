@@ -1,0 +1,52 @@
+USE SENAI_HROADS_TARDE;
+
+INSERT INTO CLASSES (NOME)
+VALUES	('Bárbaro')
+		,('Cruzado')
+		,('Caçadora de Demonios')
+		,('Monge')
+		,('Necromante')
+		,('Feiticeiro')
+		,('Arcanista');
+
+INSERT INTO TIPO_DE_HABILIDADE (NOME)
+VALUES   ('Ataque')
+		,('Defesa')
+		,('Cura')
+		,('Magia')
+
+INSERT INTO HABILIDADES (NOME, ID_TIPO_DE_HABILIDADE)
+VALUES	 ('Lança Mortal', 1)
+		,('Escudo Supremo', 2)
+		,('Recuperar Vida', 3)
+
+INSERT INTO CLASSES_HABILIDADES (ID_CLASSE, ID_HABILIDADES)
+VALUES	(1,1)
+		,(1,2)
+		,(2,2)
+		,(3,1)
+		,(4,3)
+		,(4,2)
+		,(5,NULL)
+		,(6,3)
+		,(7,NULL);
+
+INSERT INTO PERSONAGENS (NOME, ID_CLASSE, CAP_MAX_VIDA, CAP_MAX_MANA, DATA_ATT, DATA_CRIACAO)
+VALUES ('DeuBug',1,'100','80',GETDATE(),'18/01/2019')
+		,('BitBug',4,'70','100',GETDATE(),'17/03/2016')
+		,('Fer8',7,'75','60',GETDATE(),'18/03/2018');
+
+
+-----VISUALIZAÇÃO-----
+
+SELECT * FROM CLASSES
+SELECT * FROM TIPO_DE_HABILIDADE
+SELECT * FROM HABILIDADES
+SELECT * FROM CLASSES_HABILIDADES
+SELECT * FROM PERSONAGENS
+
+
+-----ALTERAÇÕES-----
+
+UPDATE PERSONAGENS SET NOME = 'Fer7' WHERE ID = 3
+UPDATE CLASSES SET NOME = 'Necromancer' WHERE ID = 5
